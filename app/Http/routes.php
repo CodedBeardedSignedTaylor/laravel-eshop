@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    Route::get('/admin/product/new', 'ProductController@newProduct');
+    Route::get('/admin/products', 'ProductController@index');
+    Route::get('/admin/product/destroy/{id}', 'ProductController@destroy');
+    Route::get('/admin/product/save', 'ProductController@add');
+    return view('master');
 });
