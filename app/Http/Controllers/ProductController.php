@@ -42,7 +42,7 @@ class ProductController extends Controller
     {
         $file = Request::file('file');
         $extension = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFileName().'.'$extension, File::get($file));
+        Storage::disk('local')->put($file->getFileName().'.'.$extension, File::get($file));
 
         $entry = new \App\File();
         $entry->mime = $file->getClientMimeType();
